@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "RobotoFlex";
-    src: url(RobotoFlex.ttf);
+    font-family: "VariableFont";
+    src: url(variable-font.ttf);
 }
 
 *{
@@ -10,7 +10,7 @@
 
 
 #container{
-    font-family: "RobotoFlex";
+    font-family: "VariableFont";
     font-size: 10vw;
     width: 100vw;
     height: 100vh;
