@@ -12,9 +12,9 @@
 #container{
     font-family: "VariableFont";
     font-size: 10vw;
+    font-variation-settings: "wght" 100, "wdth" 51;
     width: 100vw;
     height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;

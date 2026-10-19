@@ -1,9 +1,7 @@
 
 const container = document.getElementById("container")
 
-
 container.style.fontSize = "200px"
-
 
 const fontSize = document.getElementById("fontSize")
 
