@@ -11,52 +11,109 @@ container.innerHTML = ""
 // Set up paragraph
 const paragraph = document.createElement("p")
 
-// Now lets apply word by word
+
+// Apply all words to the paragraph
 textSplitInWords.forEach((word, index) => {
 
-    // Single Letters or multiple letters can be wrapped in a Span Element
-    // > Span means that the elements is still flowing within text and does not look differnt per default!
-    const span = document.createElement("span")
+        // Single Letters or multiple letters can be wrapped in a Span Element
+        // > Span means that the elements is still flowing within text and does not look differnt per default!
+        const span = document.createElement("span")
 
-    // We can give it a random color
-    const randomValue = Math.random() * 255 // (0–255)
+        // // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
+        // const wghtRange = 1000 - 100
+        // const wght = x * wghtRange + 100
 
-    // –––––––– Conditions ––––––––
+        // const wdthRange = 151 - 25
+        // const wdth = y * wdthRange + 25
 
-    const mouseX = e.clientX
-    const mouseY = e.clientY
-
-    const x = mouseX / window.innerWidth
-    const y = mouseY / window.innerHeight
+        // container.style.fontVariationSettings = `"wght" ${wght}, "wdth" ${wdth}`
 
 
-    // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+        // Colors
+        // span.style.background = "rgb(" + r + ',' + g + ',' + b + ")"
 
-    const wghtRange = 1000 - 100
-    const wght = x * wghtRange + 100
+        span.innerHTML = word
 
-    const wdthRange = 151 - 25
-    const wdth = y * wdthRange + 25
+        paragraph.appendChild(span)
 
-    container.style.fontVariationSettings = `"wght" ${wght}, "wdth" ${wdth}`
+        const spacer = document.createElement("span")
+        spacer.innerHTML = " "
+        paragraph.appendChild(spacer)
 
-
-    // Colors
-    span.style.background = "rgb(" + r + ',' + g + ',' + b + ")"
-
-    span.innerHTML = word
-
-    console.log("span", span)
-
-    paragraph.appendChild(span)
-
-    const spacer = document.createElement("span")
-    spacer.innerHTML = " "
-    paragraph.appendChild(spacer)
 
 })
 
+container.appendChild(paragraph)
+
+
+
+const spans = paragraph.querySelectorAll('span')
+
+window.addEventListener("mousemove", (e) => {
+
+
+    // Now lets apply word by word
+    spans.forEach((span, index) => {
+
+        // Single Letters or multiple letters can be wrapped in a Span Element
+        // > Span means that the elements is still flowing within text and does not look differnt per default!
+
+
+        // We can give it a random color
+        const randomValue = Math.random() * 255 // (0–255)
+
+
+        // –––––––– Conditions ––––––––
+
+        const mouseX = e.clientX
+        const mouseY = e.clientY
+
+        const x = mouseX / window.innerWidth
+        const y = mouseY / window.innerHeight
+
+        const spanPos = span.getBoundingClientRect()
+
+        const centerX = spanPos.left + spanPos.width / 2
+        const centerY = spanPos.top + spanPos.height / 2
+
+        const left = centerX / window.innerWidth
+        const top = centerY / window.innerHeight
+
+
+        const dist = Math.hypot(x - left, y - top)
+
+        console.log("dist", dist)
+
+        // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+        const wghtRange = 1000 - 100
+        const wght = dist * wghtRange + 100
+
+        const wdthRange = 151 - 25
+        const wdth = dist * wdthRange + 25
+
+        console.log(`"wght" ${wght}, "wdth" ${wdth}`)
+
+        span.style.fontVariationSettings = `"wght" ${wght}`
+
+
+        // Colors
+        // span.style.background = "rgb(" + r + ',' + g + ',' + b + ")"
+
+        // span.innerHTML = word
+
+        // console.log("span", span)
+
+        // paragraph.appendChild(span)
+
+        // const spacer = document.createElement("span")
+        // spacer.innerHTML = " "
+        // paragraph.appendChild(spacer)
+
+    })
+
+})
 
 container.appendChild(paragraph)
 
