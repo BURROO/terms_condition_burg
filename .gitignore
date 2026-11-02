@@ -1,3 +1,18 @@
 /examples
 /text
 /variable
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+*.local.json
+appsettings.Development.json
+secrets.json
+
+# OS generated
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini

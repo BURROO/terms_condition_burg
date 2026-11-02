@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "VariableFont";
+    src: url(variable-font.ttf);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#container{
+    font-family: "VariableFont";
+    width: 100vw;
+    padding: 20px;
+    font-size: 60px;
+    font-variation-settings: "wght" 200, "wdth" 120;
+
+}
+
+span{
+    display: inline-block;
+    /* margin-right: 0.1em; */
+    transition: 0.6s;
+}

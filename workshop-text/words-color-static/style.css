@@ -1,0 +1,49 @@
+@font-face {
+    font-family: "VariableFont";
+    src: url(variable-font.ttf);
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* background: rgb(81, 0, 255); */
+}
+
+#container{
+    font-family: "VariableFont";
+    width: 100vw;
+    padding: 20px;
+    font-size: 60px;
+    font-variation-settings: "wght" 200, "wdth" 120;
+
+}
+
+span{
+    display: inline-block;
+    margin-right: 0.4em;
+    /* animation: myFavAnimation 1s infinite alternate ease-in-out; */
+    /* font-variation-settings: "wght" 300, "wdth" 25; */
+    transition: 0.6s;
+}
+/* 
+span:hover{
+    font-variation-settings: "wght" 600, "wdth" 15 !important;
+}
+
+span:nth-child(2n){
+    animation-delay: 0.5s;
+}
+
+@keyframes myFavAnimation {
+    0%{
+        font-variation-settings: "wght" 300, "wdth" 25;
+    }
+    100%{
+        font-variation-settings: "wght" 600, "wdth" 151;
+    }
+} */
